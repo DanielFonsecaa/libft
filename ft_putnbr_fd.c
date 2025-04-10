@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-fons <dda-fons@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 20:43:50 by dda-fons          #+#    #+#             */
-/*   Updated: 2025/04/07 20:55:09 by dda-fons         ###   ########.fr       */
+/*   Created: 2025/04/10 13:30:20 by dda-fons          #+#    #+#             */
+/*   Updated: 2025/04/10 13:38:08 by dda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*ret;
-	size_t	m;
+	long	i;
 
-	m = size * nmemb;
-	ret = malloc(m);
-	if (!ret)
-		return (NULL);
-	ft_bzero(ret, m);
-	return (ret);
+	i = n;
+	if (i < 0)
+	{
+		i *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (i >= 10)
+		ft_putnbr_fd((i / 10), fd);
+	ft_putchar_fd(((i % 10) + '0'), fd);
 }

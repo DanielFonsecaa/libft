@@ -33,47 +33,77 @@ static size_t	ft_count_words(char *str, char c)
 	return (words);
 }
 
-static char	*ft_dup(char *str, char c)
+static char	*ft_dup(const char *str, size_t start, size_t len)
 {
 	char	*string;
 	size_t	i;
+
+	i = 0;
+	string = malloc(sizeof(char) * (len + 1));
+	if (!string)
+		return (NULL);
+	while (i < len)
+	{
+		string[i] = str[start + i];
+		i++;
+	}
+	string[i] = '\0';
+	return (string);
+}
+
+static void	ft_free(size_t i, char **strings)
+{
+	size_t	k;
+
+	k = 0;
+	while (i > k)
+	{
+		free(strings[k]);
+		k++;
+	}
+	free(strings);
+}
+
+static char	**ft_while(char c, const char *s, char **strings, size_t start)
+{
+	size_t	i;
 	size_t	j;
+	size_t	k;
 
 	i = 0;
 	j = 0;
-	while (str[i] == c && str[i])
+	k = 0;
+	while (i < ft_count_words((char *)s, c))
+	{
+		while (s[j] == c && s[j])
+			j++;
+		start = j;
+		while (s[j] != c && s[j])
+			j++;
+		strings[i] = ft_dup(s, start, j - start);
+		if (!strings[i])
+		{
+			ft_free(i, strings);
+			return (NULL);
+		}
 		i++;
-	while (str[i + j] != c && str[i + j])
-		j++;
-	string = ft_substr(str, i, j);
-	if (!string)
-		return (NULL);
-	return (string);
+	}
+	strings[i] = NULL;
+	return (strings);
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**strings;
-	size_t	i;
-	size_t	j;
+	size_t	start;
+	size_t	words;
 
-	i = 0;
-	j = 0;
-	if (!s)
-		return (NULL);
-	strings = malloc(sizeof(char *) * (ft_count_words((char *)s, c) + 1));
+	start = 0;
+	words = ft_count_words((char *)s, c);
+	strings = malloc(sizeof(char *) * (words + 1));
 	if (!strings)
 		return (NULL);
-	while (i < ft_count_words((char *)s, c))
-	{
-		while (s[j] == c && s[j])
-			j++;
-		if (s[j] != c && s[j])
-			strings[i++] = ft_dup((char *)&s[j], c);
-		while (s[j] != c && s[j])
-			j++;
-	}
-	strings[i] = 0;
+	strings = ft_while(c, s, strings, start);
 	return (strings);
 }
 /*

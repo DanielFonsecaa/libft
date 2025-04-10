@@ -24,8 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (s[i])
 		i++;
-	if (!s)
-		return (NULL);
 	if (i <= start)
 		return (ft_strdup(""));
 	i -= start;
