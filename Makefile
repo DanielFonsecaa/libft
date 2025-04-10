@@ -39,9 +39,20 @@ FILES += ft_putstr_fd.c
 FILES += ft_putendl_fd.c
 FILES += ft_putnbr_fd.c
 
+B_FILES = ft_lstnew.c
+B_FILES += ft_lstadd_front.c
+B_FILES += ft_lstsize.c
+B_FILES += ft_lstlast.c
+B_FILES += ft_lstadd_back.c
+#B_FILES += ft_lstdelone.c
+#B_FILES += ft_lstclear.c
+#B_FILES += ft_lstiter.c
+#B_FILES += ft_lstmap.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(FILES))
+B_SRC = $(addprefix $(SRC_PATH)/, $(B_FILES))
 OBJS = $(SRC:.c=.o)
+B_OBJS = $(B_SRC:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
@@ -65,12 +76,15 @@ $(BUILD_PATH):
 $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC) $(INC)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+$(B_OBJS): $(B_SRC)
+	$(CC) $(CFLAGS) -c $(B_SRC) $(INC)
+
+bonus: $(OBJS) $(B_OBJS)
+	make all
+	$(AR) $(NAME) $(OBJS) $(B_OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(B_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
