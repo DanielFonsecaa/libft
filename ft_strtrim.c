@@ -29,3 +29,32 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, 0, end - s1 + 1));
 }
+/*
+void print_trimmed_string(const char *s1, const char *set)
+{
+    char *trimmed = ft_strtrim(s1, set);
+    if (trimmed)
+    {
+        printf("ft_strtrim(\"%s\", \"%s\") = \"%s\"\n", s1, set, trimmed);
+        free(trimmed);
+	}
+    else
+        printf("ft_strtrim(\"%s\", \"%s\") returned NULL\n", s1, set);
+}
+
+int main()
+{
+    print_trimmed_string("  Hello, World!  ", " ");
+    print_trimmed_string("**Hello, World!**", "*");
+    print_trimmed_string("Hello, World!", "#");
+    print_trimmed_string("", " ");
+    print_trimmed_string("###Hello", "#");
+    print_trimmed_string("Hello###", "#");
+    print_trimmed_string("####", "#");
+    print_trimmed_string("", "");
+    print_trimmed_string("abcdef", "xyz");
+    print_trimmed_string("xxabcdefxx", "x");
+    print_trimmed_string("xxabcxx", "x");
+    return 0;
+}
+*/
