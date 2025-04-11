@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -27,3 +26,9 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd((i / 10), fd);
 	ft_putchar_fd(((i % 10) + '0'), fd);
 }
+/*
+int	main()
+{
+	ft_putnbr_fd(1235, 2);
+}
+*/

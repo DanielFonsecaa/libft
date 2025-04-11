@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -25,3 +24,26 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ret, m);
 	return (ret);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	void *ptr = ft_calloc(5, sizeof(int));
+	if (ptr)
+	{
+		for (size_t i = 0; i < 5 * sizeof(int); i++)
+		{
+			if (((unsigned char *)ptr)[i] != 0)
+			{
+				printf("FAILED");
+				free(ptr);
+				return (0);
+			}
+		}
+			printf("SUCCESS");
+	}
+	else 
+		printf("FAILED");
+	free(ptr);
+}
+*/

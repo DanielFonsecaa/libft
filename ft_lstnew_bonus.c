@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-fons <dda-fons@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -24,3 +23,31 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
+/*
+void print_list(t_list *list)
+{
+    while (list)
+    {
+        printf("Node content: %s\n", (char *)list->content);
+        list = list->next;
+    }
+}
+int main()
+{
+    char *content1 = "Hello, World!";
+    char *content2 = "Linked List Test";
+
+    t_list *node1 = ft_lstnew(content1);
+    t_list *node2 = ft_lstnew(content2);
+    if (!node1 || !node2)
+    {
+        printf("Memory allocation failed\n");
+        return (1);
+    }
+    node1->next = node2;
+    print_list(node1);
+    free(node1);
+    free(node2);
+    return 0;
+}
+*/

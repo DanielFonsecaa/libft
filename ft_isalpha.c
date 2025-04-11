@@ -22,11 +22,15 @@ int	ft_isalpha(int c)
 #include <stdio.h>
 int	main()
 {
-	printf("%d\n",ft_isalpha(97));
-	printf("%d\n",ft_isalpha(68));
-	printf("%d\n",ft_isalpha(75));
-	printf("%d\n",ft_isalpha(4));
-	printf("%d\n",ft_isalpha(6));
+	printf("result -\"%d\"\n", ft_isalpha('0'));
+	printf("result -\"%d\"\n", ft_isalpha('A'));
+	printf("result -\"%d\"\n", ft_isalpha('z'));
+	printf("result -\"%d\"\n", ft_isalpha(' '));
+	printf("result -\"%d\"\n", ft_isalpha('!'));
+	printf("result -\"%d\"\n", ft_isalpha('\n'));
+	printf("result -\"%d\"\n", ft_isalpha('\t'));
+	printf("result -\"%d\"\n", ft_isalpha('\0'));
+	
 	return (0);
 }
 */

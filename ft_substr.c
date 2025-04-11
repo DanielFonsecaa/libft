@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -43,34 +41,28 @@ int	main()
 	char *result;
 
     result = ft_substr(str, 7, 5);
-	printf("Test 1: %s\n", result); // Expected: "World"
-    free(result);
+	printf("%s\n", result);
+	free(result);
 
-    // Test 2: Start index is 0
     result = ft_substr(str, 0, 5);
-    printf("Test 2: %s\n", result); // Expected: "Hello"
+    printf("%s\n", result);
     free(result);
 
-    // Test 3: Length exceeds string length
     result = ft_substr(str, 0, 50);
-    printf("Test 3: %s\n", result); // Expected: "Hello, World!"
+    printf("%s\n", result);
     free(result);
 
-    // Test 4: Start index is beyond string length
     result = ft_substr(str, 20, 5);
-    printf("Test 4: %s\n", result); // Expected: '' (empty string)
+    printf("%s\n", result);
     free(result);
 
-    // Test 5: Start index is equal to string length
     result = ft_substr(str, ft_strlen(str), 5);
-    printf("Test 5: %s\n", result); // Expected: '' (empty string)
+    printf("%s\n", result);
     free(result);
 
-    // Test 6: NULL input
     result = ft_substr(NULL, 0, 5);
-    printf("Test 6: %s\n", result); // Expected: (NULL)
-    free(result); // Should not free NULL, but just for safety
-
-    return 0;
+    printf("%s\n", result);
+    free(result);
+	return 0;
 }
 */

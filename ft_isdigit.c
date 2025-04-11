@@ -22,11 +22,15 @@ int	ft_isdigit(int c)
 #include <stdio.h>
 int	main()
 {
-	printf("%d\n",ft_isdigit(48));
-	printf("%d\n",ft_isdigit(50));
-	printf("%d\n",ft_isdigit(56));
-	printf("%d\n",ft_isdigit(4));
-	printf("%d\n",ft_isdigit(6));
+	printf("result -\"%d\"\n", ft_isdigit('0'));
+	printf("result -\"%d\"\n", ft_isdigit('A'));
+	printf("result -\"%d\"\n", ft_isdigit('z'));
+	printf("result -\"%d\"\n", ft_isdigit(' '));
+	printf("result -\"%d\"\n", ft_isdigit('!'));
+	printf("result -\"%d\"\n", ft_isdigit('\n'));
+	printf("result -\"%d\"\n", ft_isdigit('\t'));
+	printf("result -\"%d\"\n", ft_isdigit('\0'));
+	
 	return (0);
 }
 */

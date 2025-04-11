@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -38,9 +37,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 #include <bsd/string.h>
 int	main()
 {
-	const char *c = NULL;
-	char d[] = "eu sou o ";
+	const char *c = "danl";
+	char d[20] = "eu sou o ";
+	char d2[20] = "eu sou o ";
 	printf("%zu\n", ft_strlcat(d, c, 20));
-	printf("%zu\n", strlcat(d, c, 20));
+	printf("%zu\n", strlcat(d2, c, 20));
 }
 */

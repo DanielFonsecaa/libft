@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -34,13 +33,13 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int	main()
 {
 
-	const char *s1 = NULL;	
+	const char *s1 = "abc";	
 	const char *s2 = "abcd";
 	printf("%d\n", ft_strncmp(s1, s2, 4));
 	printf("%d\n", strncmp(s1, s2, 4));
 
 	const char *s3 = "abc";	
-	const char *s4 = NULL;
+	const char *s4 = "ab";
 	printf("%d\n", ft_strncmp(s3, s4, 4));
 	printf("%d\n", strncmp(s3, s4, 4));
 
