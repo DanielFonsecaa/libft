@@ -39,15 +39,15 @@ FILES += ft_putstr_fd.c
 FILES += ft_putendl_fd.c
 FILES += ft_putnbr_fd.c
 
-B_FILES = ft_lstnew.c
-B_FILES += ft_lstadd_front.c
-B_FILES += ft_lstsize.c
-B_FILES += ft_lstlast.c
-B_FILES += ft_lstadd_back.c
-#B_FILES += ft_lstdelone.c
-#B_FILES += ft_lstclear.c
-#B_FILES += ft_lstiter.c
-#B_FILES += ft_lstmap.c
+B_FILES = ft_lstnew_bonus.c
+B_FILES += ft_lstadd_front_bonus.c
+B_FILES += ft_lstsize_bonus.c
+B_FILES += ft_lstlast_bonus.c
+B_FILES += ft_lstadd_back_bonus.c
+B_FILES += ft_lstdelone_bonus.c
+B_FILES += ft_lstclear_bonus.c
+B_FILES += ft_lstiter_bonus.c
+B_FILES += ft_lstmap_bonus.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(FILES))
 B_SRC = $(addprefix $(SRC_PATH)/, $(B_FILES))
@@ -55,6 +55,7 @@ OBJS = $(SRC:.c=.o)
 B_OBJS = $(B_SRC:.c=.o)
 
 CC = cc
+
 CFLAGS = -Wall -Werror -Wextra
 CFLAGS += -g
 INC += -I $(INC_PATH)
