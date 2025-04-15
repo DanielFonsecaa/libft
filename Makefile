@@ -65,7 +65,7 @@ AR = ar rcs
 MKDIR = mkdir -p
 
 
-all: $(BUILD_PATH) $(NAME)
+all: $(BUILD_PATH) $(NAME) $(SRC)
 
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -80,9 +80,13 @@ $(OBJS): $(SRC)
 $(B_OBJS): $(B_SRC)
 	$(CC) $(CFLAGS) -c $(B_SRC) $(INC)
 
-bonus: $(OBJS) $(B_OBJS)
+bonus: $(OBJS) $(B_OBJS) $(B_SRC)
 	make all
 	$(AR) $(NAME) $(OBJS) $(B_OBJS)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
 
 clean:
 	$(RM) $(OBJS) $(B_OBJS)
