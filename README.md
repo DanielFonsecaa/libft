@@ -11,6 +11,14 @@ Libft is a custom implementation of a standard C library. It provides commonly u
 
 This project is part of the 42 School curriculum and was developed to gain a deeper understanding of C programming by re-implementing some of the standard library functions.
 
+<div align="center">
+  
+| Grade                                                             | Evaluation Information           |
+| :---------------------------------------------------------------- | :------------------------------- |
+| <img src="https://img.shields.io/badge/125%20%2F%20125%20%E2%98%85-sucess"/>  | `3 peers` `30 mins` `moulinette` |
+</div>
+
+
 ## ✨ Features
 
 - Reimplementation of standard libc functions
