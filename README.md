@@ -15,7 +15,7 @@ This project is part of the 42 School curriculum and was developed to gain a dee
   
 | Grade                                                             | Evaluation Information           |
 | :---------------------------------------------------------------- | :------------------------------- |
-| <img src="https://img.shields.io/badge/125%20%2F%20125%20%E2%98%85-sucess"/>  | `3 peers` `30 mins` `moulinette` |
+| <img src="https://img.shields.io/badge/125%20%2F%20100%20%E2%98%85-sucess"/>  | `3 peers` `30 mins` `moulinette` |
 </div>
 
 
